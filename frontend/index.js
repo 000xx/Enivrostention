@@ -1,21 +1,18 @@
 import {initializeBlock, useBase, useRecords} from '@airtable/blocks/ui';
-import React from 'react';
+import React, {useState} from 'react';
 
-function HelloWorldApp() {
-    const base = useBase()
-    const productTable = base.getTable('Product')
-    const product = useRecords(productTable)
-    return <div> 
-        {product.map(product => <Product product={product} />)}
-        </div>;
-}
+//import ReactDOM from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
 
-function Product(props){
-    return <div>
-        {props.product.getCellValue('Product')}
-        {props.product.getCellValue('Grade')}
-        {props.product.getCellValue('comments')}
-    </div>
-}
+import App from './App';
 
-initializeBlock(() => <HelloWorldApp />);
+
+
+
+
+    initializeBlock(() => 
+    <React.StrictMode>
+    <HashRouter>
+    <App />
+    </HashRouter>
+    </React.StrictMode>);
