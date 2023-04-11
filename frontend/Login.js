@@ -1,23 +1,25 @@
 import { useNavigate, Link } from 'react-router-dom'
 import React, { useState } from 'react';
 import {useBase, useRecords} from '@airtable/blocks/ui';
+import User from './User';
 //import './Home.css';
-function Login() {
+function Login(props) {
+
         const base = useBase();
         const table = base.getTable("User");
         const records = useRecords(table);
+
+
     
     
         const [loginValue, setLoginValue] = useState("")
         const [password, setPassword] = useState("")
+        const loggedIn = false
 
-        const userRecord = records.filter(record =>{
-            return record.getCellValue("Name") == loginValue
+        const userRecord = records.filter(records =>{
+            return records.getCellValue("Name") == loginValue;
         })
 
-        function login(){
-            return userRecord.getCellValue("password") == passwordValue
-        }
 
     
         function updateName(event){
@@ -27,8 +29,13 @@ function Login() {
             setPassword(event.target.value)
         }
         function submit(){
-            if(userRecord.getCellValue("Name") == loginValue && userRecord.getCellValue("Password") == passwordValue){
-                
+            if(userRecord[0].getCellValue("Name") == loginValue && userRecord[0].getCellValue("Password") == password){
+                props.loggedIn(userRecord[0].getCellValue("Name"))
+            }
+            else{
+                return <div>
+                    Invalid username or password
+                </div>
             }
             
             
