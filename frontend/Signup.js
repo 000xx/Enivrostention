@@ -1,7 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom'
 import React, { useState } from 'react';
 import {useBase} from '@airtable/blocks/ui';
-//import './Home.css';
+import './SignUp.css';
 function Signup() {
     const base = useBase();
     const table = base.getTable("User");
