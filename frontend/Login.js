@@ -29,13 +29,13 @@ function Login(props) {
             setPassword(event.target.value)
         }
         function submit(){
-            if(userRecord[0].getCellValue("Name") == loginValue && userRecord[0].getCellValue("Password") == password){
-                props.loggedIn(userRecord[0].getCellValue("Name"))
-            }
-            else{
-                return <div>
-                    Invalid username or password
-                </div>
+
+            try{
+                if(userRecord[0].getCellValue("Name") == loginValue && userRecord[0].getCellValue("Password") == password){
+                    props.loggedIn(userRecord[0].getCellValue("Name"))
+                }
+            }catch(err){
+                
             }
             
             
