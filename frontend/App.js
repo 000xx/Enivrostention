@@ -1,4 +1,4 @@
-//import './App.css';
+import './App.css';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Signup from './Signup';
