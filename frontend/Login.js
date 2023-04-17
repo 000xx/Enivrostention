@@ -43,9 +43,11 @@ function Login(props) {
     
     
     
-        return (
-            <div>
-                log in
+        return(
+            <div className="login">
+                <div className="loginheader">
+                LOGIN
+                </div>
                 <div>
                     <label>
                         Name:
