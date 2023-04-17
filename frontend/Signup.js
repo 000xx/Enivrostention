@@ -25,8 +25,10 @@ function Signup() {
 
 
     return (
-        <div>
-            sign up
+        <div className="signup">
+            <div className="signupheader">
+            SIGN UP
+            </div>
             <div>
                 <label>
                     Name:
