@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 function ReviewProducts() {
     const base = useBase();
     const table = base.getTable("Product");
+    const table2 = base.getTable("Producer")
 
 
     const [Product, setProduct] = useState("")
@@ -34,7 +35,6 @@ function ReviewProducts() {
     }
     
     function submit(){
-        // does the saving
         table.createRecordAsync({"Product":Product, "Grade": Grade, "comments":Comments, "Sources": Sources, "producer": Producer })
         
     }

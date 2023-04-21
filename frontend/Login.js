@@ -9,6 +9,9 @@ function Login(props) {
         const table = base.getTable("User");
         const records = useRecords(table);
 
+        const tableRemoved = base.getTable("Removed_Users");
+        const recordsRemoved = useRecords(tableRemoved);
+
 
     
     
@@ -18,6 +21,10 @@ function Login(props) {
 
         const userRecord = records.filter(records =>{
             return records.getCellValue("Name") == loginValue;
+        })
+
+        const userRecordRemoved = recordsRemoved.filter(recordsRemoved =>{
+            return recordsRemoved.getCellValue("Name") == loginValue;
         })
 
 
@@ -32,11 +39,24 @@ function Login(props) {
 
             try{
                 if(userRecord[0].getCellValue("Name") == loginValue && userRecord[0].getCellValue("Password") == password){
-                    props.loggedIn(userRecord[0].getCellValue("Name"))
+                    props.loggedIn(userRecord[0].getCellValue("Name"),userRecord[0].getCellValue("role"))
                 }
+                else if(userRecordRemoved[0].getCellValue("Name") == loginValue && userRecordRemoved[0].getCellValue("Password") == password){
+                    props.loggedIn("removed", "removed")
+                }
+                
             }catch(err){
                 
             }
+            try{
+                if(userRecordRemoved[0].getCellValue("Name") == loginValue && userRecordRemoved[0].getCellValue("Password") == password){
+                    props.loggedIn("removed", "removed")
+                }
+                
+            }catch(err){
+                
+            }
+
             
             
         }

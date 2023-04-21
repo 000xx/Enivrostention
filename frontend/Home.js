@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import React from 'react';
 import {useBase} from '@airtable/blocks/ui';
 //import './Home.css';
-function Home() {
+function Home(props) {
   const base = useBase();
   const table = base.getTable("User");
     return (
       <div>
+        Welcome {props.name}
         <div>
         </div>
         <div className="Quote">
