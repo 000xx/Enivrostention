@@ -1,0 +1,14 @@
+.ReviewProduct {
+  background-color: #02ca02; 
+  color: #000000; 
+  padding: 200px; 
+  border: 50px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  font-weight: light; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  margin: auto; 
+}
