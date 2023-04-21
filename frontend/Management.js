@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import {useBase, useRecords} from '@airtable/blocks/ui';
 import React, { useState } from 'react';
+import './Management.css';
+
 
 function Management(props){
     const base = useBase();
@@ -56,13 +58,14 @@ function Management(props){
     else if(props.role == "admin"){
         return(
             <div className="Returned">
-                <div>
+                <div className="info">
                     Here are our users. Click on them to remove them if they are violating our terms of service.
                 </div>
                 {reviews.map((review) => (
-                    <div>
-                        <div className="user" onClick={() => strike(parseInt(review))}>{review}</div>
-                        <div onClick={() => promote(parseInt(review))}>Promote</div>
+                    <div className="user">
+                        <div>{review}</div>
+                        <div className="Strike" onClick={() => strike(parseInt(review))}>Strike</div>
+                        <div className="Promote" onClick={() => promote(parseInt(review))}>Promote</div>
                     </div>
 
                     

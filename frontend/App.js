@@ -54,10 +54,7 @@ function App() {
           <NavLink to="/reviewviewer/producer" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Look at Reviews of producers</NavLink>
           <NavLink to="/reviewviewer/product" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Look at Reviews of products</NavLink>
           </div>
-          <div>
-            signed in as {userName} (admin account)
-          </div>
-          <div onClick={logOut}>
+          <div className="LoginInfo" onClick={logOut}>
             logout
           </div>
 
@@ -85,10 +82,7 @@ function App() {
           <NavLink to="/reviewviewer/producer" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Look at Reviews of producers</NavLink>
           <NavLink to="/reviewviewer/product" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Look at Reviews of products</NavLink>
           </div>
-          <div>
-            signed in as {userName}
-          </div>
-          <div onClick={logOut}>
+          <div className="LoginInfo"onClick={logOut}>
             logout
           </div>
 
@@ -115,7 +109,7 @@ function App() {
       <NavLink to="/login" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Log in</NavLink>
       <NavLink to="/reviewviewer/producer" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Look at Reviews of producers</NavLink>
       <NavLink to="/reviewviewer/product" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }>Look at Reviews of products</NavLink></div>
-      <div>
+      <div className = "LoginInfo">
         Not signed in
       </div>
 

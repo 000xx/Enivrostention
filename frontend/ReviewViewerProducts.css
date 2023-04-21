@@ -1,0 +1,16 @@
+.user{
+    display: flex; 
+  flex-direction: column; 
+  align-items: left; 
+  justify-content: left; 
+  margin: auto; 
+  width: 100%; 
+  height: 100%; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 0 10px #ccc; 
+  padding: 20px; 
+}
+.strike{
+    background-color: rgb(226, 76, 76);
+    width: 35px;
+}

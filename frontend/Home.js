@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
 import {useBase} from '@airtable/blocks/ui';
-//import './Home.css';
+import './Home.css';
 function Home(props) {
   const base = useBase();
   const table = base.getTable("User");
     return (
-      <div>
+      <div className = "everything">
         Welcome {props.name}
-        <div>
-        </div>
         <div className="Quote">
           “Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it is the only thing that ever has.”
         </div>

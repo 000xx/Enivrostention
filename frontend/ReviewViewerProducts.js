@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {useBase, useRecords} from '@airtable/blocks/ui';
 import React, { useState } from 'react';
+import './ReviewViewerProducts.css';
 
 function ReviewViewerProducts(props){
     const base = useBase();
@@ -42,7 +43,11 @@ function ReviewViewerProducts(props){
         return(
             <div className="Returned">
                 {reviews.map((review) => (
-                    <div className="user" onClick={() => strike(parseInt(review))}>{review}</div>
+                    <div className="user">
+                        <div>{review}</div>
+                        <div className="strike" onClick={() => strike(parseInt(review))}>Strike</div>
+                    </div>
+                    
                 ))}
             </div>
             

@@ -85,7 +85,7 @@ function Login(props) {
                 
                 
     
-                <Link to="/">
+                <Link to="/home">
                     <button onClick={submit}>
                         Submit
                     </button>

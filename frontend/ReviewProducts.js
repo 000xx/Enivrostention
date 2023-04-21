@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import {useBase} from '@airtable/blocks/ui';
 import React, { useState } from 'react';
-//import './Home.css';
+import './ReviewProducts.css';
 function ReviewProducts() {
     const base = useBase();
     const table = base.getTable("Product");
@@ -43,7 +43,7 @@ function ReviewProducts() {
 
     return (
         <div>
-            <div>
+            <div className="ProductName">
                 <label>
                     Product:
                     <input type="text" name="product" onChange={updateProduct} />
