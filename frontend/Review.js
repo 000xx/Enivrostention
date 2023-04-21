@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {useBase} from '@airtable/blocks/ui';
 import React, { useState } from 'react';
-//import './Home.css';
+import './ReviewProducts(Review.js).css';
 function Review() {
     const base = useBase();
     const table = base.getTable("Producer");
@@ -37,7 +37,7 @@ function Review() {
 
 
     return (
-        <div>
+        <div className="ReviewProduct">
             <div>
                 <label>
                     Producer:
