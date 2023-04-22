@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import {useBase} from '@airtable/blocks/ui';
+import {useBase, useRecords} from '@airtable/blocks/ui';
 import React, { useState } from 'react';
-import './ReviewProducts.css';
+import './ReviewProducts(Review.js).css';
 function ReviewProducts() {
     const base = useBase();
     const table = base.getTable("Product");
     const table2 = base.getTable("Producer")
+    const records = useRecords(table2)
 
 
     const [Product, setProduct] = useState("")
@@ -30,11 +31,20 @@ function ReviewProducts() {
         
     }
     function updateProducer(event){
+
         setProducer(event.target.value)
+        
+
+        
+
+        
+        
+        
         
     }
     
     function submit(){
+
         table.createRecordAsync({"Product":Product, "Grade": Grade, "comments":Comments, "Sources": Sources, "producer": Producer })
         
     }
@@ -50,28 +60,28 @@ function ReviewProducts() {
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName">
                 <label>
                     Grade
                     <input type="text" name="grade" onChange={updateGrade} />
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName">
                 <label>
                     Comments:
                     <input type="text" name="comments" onChange={updateComments} />
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName">
                 <label>
                     Sources
                     <input type="text" name="sources" onChange={updateSources} />
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName">
                 <label>
                     Producer
                     <input type="text" name="Producer" onChange={updateProducer} />
@@ -82,7 +92,7 @@ function ReviewProducts() {
             
 
             <Link to="/home">
-                <button onClick={submit}>
+                <button className="ProductName" onClick={submit}>
                     Submit
                 </button>
             </Link>

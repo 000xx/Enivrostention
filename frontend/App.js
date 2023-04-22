@@ -87,7 +87,7 @@ function App() {
           </div>
 
           <Routes>
-          <Route exact path='/home'     element={<Home />}></Route>
+          <Route exact path='/home'     element={<Home name={userName}/>}></Route>
           <Route exact path='/review/producer'     element={<Review />}></Route>
           <Route exact path='/review/product'     element={<ReviewProducts />}></Route>
           <Route exact path='/reviewviewer/producer'     element={<ReviewViewer role="member" />}></Route>

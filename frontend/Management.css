@@ -3,7 +3,7 @@
   flex-direction: column; 
   align-items: left; 
   justify-content: left; 
-  margin: auto; 
+  flex-wrap: nowrap;
   width: 100%; 
   height: 100%; 
   border: 1px solid #ccc; 

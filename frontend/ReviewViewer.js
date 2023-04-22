@@ -11,7 +11,7 @@ function ReviewViewer(props){
     const reviews = [];
 
     for(let i = 0; i < (records.length); i++){
-        reviews[i] =(i+1) + ". " + "Producer: " + records[i].getCellValue("Product") + " grade: " +records[i].getCellValue("Grade") + " Comments: " +  records[i].getCellValue("Comments") +" Sources:"+ records[i].getCellValue("Sources")
+        reviews[i] =(i+1) + ". " + "Producer: " + records[i].getCellValue("Producer") + " grade: " +records[i].getCellValue("Grade") + " Comments: " +  records[i].getCellValue("Comments") +" Sources:"+ records[i].getCellValue("Sources")
     } 
 
     function strike(review){

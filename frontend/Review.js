@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {useBase} from '@airtable/blocks/ui';
 import React, { useState } from 'react';
-import './ReviewProducts(Review.js).css';
+import './review.css';
 function Review() {
     const base = useBase();
     const table = base.getTable("Producer");
@@ -30,7 +30,7 @@ function Review() {
     
     function submit(){
         // does the saving
-        table.createRecordAsync({"Product":Product, "Grade": Grade, "Comments":Comments, "Sources": Sources,})
+        table.createRecordAsync({"Producer":Product, "Grade": Grade, "Comments":Comments, "Sources": Sources,})
         
     }
 
@@ -38,28 +38,28 @@ function Review() {
 
     return (
         <div className="ReviewProduct">
-            <div>
+            <div className="ProductName">
                 <label>
                     Producer:
-                    <input type="text" name="product" onChange={updateProduct} />
+                    <input type="text" name="producer" onChange={updateProduct} />
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName" >
                 <label>
                     Grade
                     <input type="text" name="grade" onChange={updateGrade} />
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName" >
                 <label>
                     Comments:
                     <input type="text" name="comments" onChange={updateComments} />
                     
                 </label>
             </div>
-            <div>
+            <div className="ProductName">
                 <label>
                     Sources
                     <input type="text" name="sources" onChange={updateSources} />
@@ -70,7 +70,7 @@ function Review() {
             
 
             <Link to="/home">
-                <button onClick={submit}>
+                <button className="ProductName" onClick={submit}>
                     Submit
                 </button>
             </Link>
